@@ -92,5 +92,6 @@ while True:
     print("Predicted Emotion:",emotion[0])
 ```
 <img width="1205" height="637" alt="image" src="https://github.com/user-attachments/assets/73875d40-9dc3-48ef-8eed-479384d79c7c" />
-<img width="908" height="846" alt="image" src="https://github.com/user-attachments/assets/3bc27a01-b819-42cd-be0a-bf01ca4ec168" />
+<img width="795" height="683" alt="image" src="https://github.com/user-attachments/assets/85854b54-6850-451a-aaed-8b7890b41192" />
+
 
