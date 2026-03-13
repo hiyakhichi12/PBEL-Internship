@@ -3,9 +3,9 @@ NAME- Hiya Khichi
 BATCH- 8
 Project Presentation
 You can view the project presentation here:
-[Emotion Recognition PPT:] (Emotion_Recognition_Presentation.pptx)
+[Emotion Recognition PPT:](pbel.pptx)
 [PROJECT- AI BASED EMOTION RECOGNITION SYSTEM FROM TEXT]
-```
+
 Abstract
 
 Emotion recognition from text is an important application of Natural Language Processing (NLP). This project aims to build a machine learning model that can detect human emotions from textual data such as tweets. The system processes text, removes unnecessary elements, and converts the cleaned data into numerical features using TF-IDF vectorization. Two machine learning algorithms, Naive Bayes and Logistic Regression, are used to classify emotions. The model is evaluated using accuracy score, confusion matrix, and classification report. The system also allows users to input their own sentences and predicts the corresponding emotion.
@@ -77,7 +77,7 @@ Technologies Used
 3.Matplotlib
 4.Scikit-learn
 5.Natural Language Processing (NLP
-```
+
 <img width="792" height="758" alt="image" src="https://github.com/user-attachments/assets/23066b7c-cfee-48f5-9a80-2496ae5b480b" />
 <img width="1032" height="856" alt="image" src="https://github.com/user-attachments/assets/1e84897d-3b1b-4716-a91d-ccf80e08da4b" />
 <img width="624" height="377" alt="image" src="https://github.com/user-attachments/assets/202d4d7c-aca7-488f-9e4d-27a32e1aabd0" />
