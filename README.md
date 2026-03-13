@@ -3,7 +3,7 @@ NAME- Hiya Khichi
 BATCH- 8
 Project Presentation
 You can view the project presentation here:
-[Emotion Recognition PPT:](pbel.pptx)
+[Emotion Recognition explaination](https://drive.google.com/file/d/1YAvbtFaoN2mWNioLiL6wPrEVwwCi7Hwp/view?usp=drive_link)
 [PROJECT- AI BASED EMOTION RECOGNITION SYSTEM FROM TEXT]
 
 Abstract
