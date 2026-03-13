@@ -1,6 +1,9 @@
 # PBEL-Internship
 NAME- Hiya Khichi
 BATCH- 8
+Project Presentation
+You can view the project presentation here:
+[Emotion Recognition PPT:] (Emotion_Recognition_Presentation.pptx)
 [PROJECT- AI BASED EMOTION RECOGNITION SYSTEM FROM TEXT]
 ```
 Abstract
