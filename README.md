@@ -3,132 +3,77 @@ NAME- Hiya Khichi
 BATCH- 8
 [PROJECT- AI BASED EMOTION RECOGNITION SYSTEM FROM TEXT]
 ```
-import pandas as pd
-import matplotlib.pyplot as plt
-import re
+Abstract
 
-from sklearn.model_selection import train_test_split
-from sklearn.feature_extraction.text import TfidfVectorizer
+Emotion recognition from text is an important application of Natural Language Processing (NLP). This project aims to build a machine learning model that can detect human emotions from textual data such as tweets. The system processes text, removes unnecessary elements, and converts the cleaned data into numerical features using TF-IDF vectorization. Two machine learning algorithms, Naive Bayes and Logistic Regression, are used to classify emotions. The model is evaluated using accuracy score, confusion matrix, and classification report. The system also allows users to input their own sentences and predicts the corresponding emotion.
 
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.linear_model import LogisticRegression
+Project Description
 
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+This project implements an AI-based emotion detection system using machine learning techniques. The system analyzes text data and predicts emotions such as happiness, sadness, anger, or other sentiments expressed in the text.
+The project uses a dataset of tweets containing emotion labels. Text preprocessing techniques are applied to clean the data before training the model. The cleaned text is then converted into numerical form using TF-IDF vectorization.
 
+Two classification algorithms are used:
+Naive Bayes
+Logistic Regression
+the model with better performance is used to predict the emotion of new input text.
 
-#LOAD DATASET 
+Methodology->
 
-df = pd.read_csv("tweet_emotions.csv")
+The methodology of this project consists of the following steps:
 
-print("Dataset Preview:")
-print(df.head())
+1)Dataset Collection
 
-print("\nEmotion Distribution:")
-print(df["sentiment"].value_counts())
+The dataset tweet_emotions.csv is used. It contains tweet text and their corresponding emotion labels.
 
+2) Data Preprocessing
 
-# TEXT CLEANING 
+Text preprocessing is performed to improve the quality of the data.
 
-def clean_text(text):
+Steps include:
+Converting text to lowercase
+Removing URLs
+Removing user mentions
+Removing punctuation and special characters
 
-    text = text.lower()
+3) Data Visualization
 
-    text = re.sub(r"http\S+", "", text)      # remove links
-    text = re.sub(r"@\w+", "", text)         # remove mentions
-    text = re.sub(r"[^a-z\s]", "", text)     # remove punctuation
+Emotion distribution in the dataset is visualized using:
 
-    return text
+Bar chart
 
+Pie chart
 
-df["clean_text"] = df["content"].apply(clean_text)
+These visualizations help understand the proportion of each emotion category.
 
+4) Feature Extraction
 
-# VISUALIZATION
+TF-IDF (Term Frequency–Inverse Document Frequency) is used to convert textual data into numerical vectors that machine learning models can understand.
 
-df["sentiment"].value_counts().plot(kind="bar")
-plt.title("Emotion Distribution")
-plt.xlabel("Emotion")
-plt.ylabel("Count")
-plt.show()
+5)Model Training
 
-df["sentiment"].value_counts().plot(kind="pie", autopct='%1.1f%%')
-plt.title("Emotion Distribution")
-plt.ylabel("")
-plt.show()
+Two models are trained:
+Naive Bayes
+Efficient for text classification tasks.
+Logistic Regression
+Provides strong performance for classification problems.
 
+6) Model Evaluation
 
-#FEATURES
+The performance of the models is evaluated using:
+Accuracy Score
+Confusion Matrix
+Classification Report
 
-X = df["clean_text"]
-y = df["sentiment"]
+7) Emotion Prediction
 
+The system allows users to input their own sentence. The trained model analyzes the text and predicts the emotion expressed.
 
-X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.2, random_state=42
-)
-
-
-# TF-IDF
-
-vectorizer = TfidfVectorizer(
-    max_features=5000,
-    stop_words="english"
-)
-
-X_train_vec = vectorizer.fit_transform(X_train)
-X_test_vec = vectorizer.transform(X_test)
-
-
-# MODEL 1 
-
-nb_model = MultinomialNB()
-nb_model.fit(X_train_vec, y_train)
-
-nb_pred = nb_model.predict(X_test_vec)
-
-print("\nNaive Bayes Accuracy:")
-print(accuracy_score(y_test, nb_pred))
-
-
-#MODEL 2 (STRONGER)
-
-lr_model = LogisticRegression(max_iter=200)
-
-lr_model.fit(X_train_vec, y_train)
-
-lr_pred = lr_model.predict(X_test_vec)
-
-print("\nLogistic Regression Accuracy:")
-print(accuracy_score(y_test, lr_pred))
-
-
-#EVALUATION 
-
-print("\nConfusion Matrix:")
-print(confusion_matrix(y_test, lr_pred))
-
-print("\nClassification Report:")
-print(classification_report(y_test, lr_pred))
-
-
-#USER PREDICTION 
-
-print("\n------ EMOTION * DETECTOR ------")
-
-while True:
-
-    text = input("Enter a sentence (type exit): ")
-
-    if text.lower() == "exit":
-        break
-
-    text = clean_text(text)
-
-    vec = vectorizer.transform([text])
-
-    prediction = lr_model.predict(vec)
-
-    print("Predicted Emotion:", prediction[0])
+Technologies Used
+1.Python
+2.Pandas
+3.Matplotlib
+4.Scikit-learn
+5.Natural Language Processing (NLP
 ```
 <img width="792" height="758" alt="image" src="https://github.com/user-attachments/assets/23066b7c-cfee-48f5-9a80-2496ae5b480b" />
 <img width="1032" height="856" alt="image" src="https://github.com/user-attachments/assets/1e84897d-3b1b-4716-a91d-ccf80e08da4b" />
